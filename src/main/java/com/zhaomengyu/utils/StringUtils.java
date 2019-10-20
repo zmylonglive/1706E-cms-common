@@ -2,6 +2,7 @@
  * 
  */
 package com.zhaomengyu.utils;
+import java.text.NumberFormat;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -188,9 +189,9 @@ public class StringUtils {
 	
 	/**
 	 * (1)利用Html的<p>标签来保留文本的换行。
-(2)Windows系统换行符是“\r\n”,Linux系统是“\n”，因此要将\n\r替换成一个\n。
-(3)再将\n结尾的这行文本用<p></p>标签包起来。 张三\n李四      <p>张三</p><p>李四</p>
-(4)如果遇到单个\r字符要使用<br/>标签替换。
+		(2)Windows系统换行符是“\r\n”,Linux系统是“\n”，因此要将\n\r替换成一个\n。
+		(3)再将\n结尾的这行文本用<p></p>标签包起来。 张三\n李四      <p>张三</p><p>李四</p>
+		(4)如果遇到单个\r字符要使用<br/>标签替换。
 	 * @param src
 	 * @return
 	 */
@@ -206,6 +207,22 @@ public class StringUtils {
 		return dst;
 	}
 	
-	
+	/**
+	 * 百分比计算
+	 * @Title: percent 
+	 * @Description: TODO
+	 * @param num
+	 * @param total
+	 * @return
+	 * @return: String
+	 */
+	public static String percent(Integer num,Integer total ) {
+		// 创建一个数值格式化对象   
+		NumberFormat numberFormat = NumberFormat.getInstance(); 
+		// 设置精确到小数点后0位   
+		numberFormat.setMaximumFractionDigits(0); 
+		String result = numberFormat.format((float)num/(float)total*100);
+		return result;
+	}
 	
 }

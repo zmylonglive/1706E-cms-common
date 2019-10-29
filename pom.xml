@@ -4,7 +4,15 @@
   <artifactId>zhaomengyu-cms</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-   <dependencies>
+  <properties>
+  	<commons-lang3.version>3.3.2</commons-lang3.version>
+  </properties>
+  <dependencies>
+  	<dependency>
+  		<groupId>commons-codec</groupId>
+  		<artifactId>commons-codec</artifactId>
+  		<version>1.5</version>
+  	</dependency>
   <!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 		    <groupId>junit</groupId>
@@ -12,5 +20,14 @@
 		    <version>4.12</version>
 		   <!--  <scope>test</scope> -->
 		</dependency>
+		
+		
+			<!-- 依赖的公共包 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		
   </dependencies>
 </project>
